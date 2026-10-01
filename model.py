@@ -156,3 +156,22 @@ def chunk_by_sentences(text, max_chars):
 
     return chunks
 
+# Step 9 - chunk_with_overlap
+def chunk_with_overlap(text, chunk_size, overlap):
+    # TODO: return sliding-window chunks of length chunk_size sharing `overlap` chars
+
+    chunks = []
+
+    step = chunk_size - overlap
+
+    start = 0
+
+    while start < len(text):
+        chunk = text[start:start + chunk_size]
+
+        chunks.append(chunk)
+
+        start += step
+
+    return chunks
+
