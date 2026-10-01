@@ -82,3 +82,14 @@ def make_document(text, source, title):
 
     return document
 
+# Step 6 - chunk_fixed_size
+def chunk_fixed_size(text, chunk_size):
+    # TODO: split text into consecutive non-overlapping chunks of length chunk_size
+    chunks = []
+
+    for start in range(0, len(text), chunk_size):
+        chunk = text[start:start + chunk_size]
+        chunks.append(chunk)
+
+    return chunks
+
