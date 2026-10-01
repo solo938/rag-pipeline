@@ -200,3 +200,13 @@ def load_embedding_model(model_name):
 
     return model
 
+# Step 12 - embed_text
+def embed_text(model, text):
+    # TODO: Return a 1D float32 numpy embedding vector for the given text string.
+    embedding = model.encode(text)
+
+
+    embedding = np.asarray(embedding, dtype=np.float32)
+
+    return embedding
+
