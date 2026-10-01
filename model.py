@@ -175,3 +175,20 @@ def chunk_with_overlap(text, chunk_size, overlap):
 
     return chunks
 
+# Step 10 - attach_chunk_metadata
+def attach_chunk_metadata(chunks, source):
+    # TODO: wrap each chunk string with source, position, and chunk_id metadata.
+    metadata_chunks = []
+
+    for position, chunk in enumerate(chunks):
+        metadata = {
+            "text" : chunk,
+            "source" : source,
+            "position" : position,
+            "chunk_id" : f"{source}::{position}"
+
+        }
+        metadata_chunks.append(metadata)
+
+    return metadata_chunks
+
