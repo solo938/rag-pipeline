@@ -57,3 +57,17 @@ def extract_text_from_html(html):
 
     return "".join(parser.text).strip()
 
+# Step 4 - normalize_text
+import unicodedata
+import re
+
+def normalize_text(text):
+    # TODO: NFKC-normalize the text and collapse runs of whitespace into single spaces.
+    normalized = unicodedata.normalize("NFKC", text)
+
+    content = re.sub(r"\s+", " ", normalized)
+
+    cleaned = content.strip()
+
+    return cleaned
+
